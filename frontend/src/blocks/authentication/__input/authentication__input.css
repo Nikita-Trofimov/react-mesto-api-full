@@ -1,0 +1,29 @@
+.authentication__input{
+  border: none;
+  border-bottom: 2px solid #CCCCCC;
+  padding: 0 0 13px 0;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: black;
+  min-width: 100%;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.authentication__input:last-of-type {
+  margin-bottom: 0;
+}
+
+.authentication__input::-webkit-input-placeholder { color: #CCCCCC; }
+
+.authentication__input:hover {
+  outline: none;
+}
+
+.authentication__input:focus {
+  outline: none;
+}
+
+.authentication__input:active {
+  outline: none;
+}

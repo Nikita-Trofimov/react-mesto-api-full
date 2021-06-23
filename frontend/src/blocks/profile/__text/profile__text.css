@@ -1,0 +1,14 @@
+.profile__text {
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(2, max-content);
+  margin-left: 30px;
+  gap: 18px 16px;
+  place-items: baseline;
+}
+
+@media (max-width: 768px) {
+ .profile__text {
+    gap: 10px 14px;
+ }
+}

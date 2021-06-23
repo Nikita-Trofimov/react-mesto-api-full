@@ -1,0 +1,16 @@
+.authentication__title {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .authentication__title {
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

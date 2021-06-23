@@ -1,0 +1,6 @@
+.info-tooltip__img {
+  max-width: 75vw;
+  max-height: 75vh;
+  display: block;
+  margin: 26px auto 32px auto;
+}

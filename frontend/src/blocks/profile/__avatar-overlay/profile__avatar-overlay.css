@@ -1,0 +1,7 @@
+.profile__avatar-overlay {
+  position: relative;
+}
+
+.profile__avatar-overlay:hover {
+  background: url('../../../images/edit_avatar.svg') no-repeat center;
+}

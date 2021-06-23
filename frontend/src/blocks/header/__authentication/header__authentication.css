@@ -1,0 +1,13 @@
+.header__authentication {
+  font-size: 18px;
+  line-height: 22px;
+  margin: 51px 0 46px 0;
+}
+
+@media (max-width: 768px) {
+  .header__authentication {
+    font-size: 14px;
+    line-height: 17px;
+    margin: 33px 0;
+  }
+}

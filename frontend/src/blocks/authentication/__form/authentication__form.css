@@ -1,0 +1,9 @@
+.authentication__form {
+  margin: 60px auto 15px auto;
+}
+
+@media (max-width: 768px) {
+  .authentication__form {
+    margin: 40px auto 20px auto;
+  }
+}
