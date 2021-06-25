@@ -18,6 +18,7 @@ const serverError = require('./middlewares/serverError');
 
 const options = {
   origin: [
+    'http://localhost:3000',
     'https://api.nikita-mesto.nomoredomains.club',
     'https://nikita-mesto.nomoredomains.monster/',
   ],
