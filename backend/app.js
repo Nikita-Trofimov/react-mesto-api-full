@@ -6,6 +6,7 @@ const { celebrate, Joi } = require('celebrate');
 const { errors } = require('celebrate');
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
+const cors = require('cors');
 const cardRoutes = require('./routes/cards');
 const userRoutes = require('./routes/users');
 const NotFound = require('./utils/errors/NotFound');
@@ -15,8 +16,22 @@ const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const serverError = require('./middlewares/serverError');
 
+const options = {
+  origin: [
+    'https://api.nikita-mesto.nomoredomains.club',
+    'https://nikita-mesto.nomoredomains.monster/',
+  ],
+  methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
+  credentials: true,
+};
+
 const { PORT = 3000 } = process.env;
 const app = express();
+
+app.use('*', cors(options));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
