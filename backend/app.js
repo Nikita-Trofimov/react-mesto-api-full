@@ -29,6 +29,8 @@ const options = {
   credentials: true,
 };
 
+console.log('Новая версия');
+
 const { PORT = 3000 } = process.env;
 const app = express();
 
