@@ -115,6 +115,7 @@ module.exports.login = (req, res, next) => {
 module.exports.logout = (res, next) => {
   try {
     res.cookies.set('jwt', { maxAge: 0 });
+    res.end();
   } catch (err) {
     next(err);
   }
