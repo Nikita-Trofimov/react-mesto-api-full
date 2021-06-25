@@ -43,6 +43,7 @@ function App() {
       })
       .catch(err => console.log('Ошибка ' + err));
 
+      history.push("/");
     }
   }, [loggedIn])
 

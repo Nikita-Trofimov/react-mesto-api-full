@@ -103,7 +103,6 @@ module.exports.login = (req, res, next) => {
         return res.status(200).cookie('jwt', token, {
           maxAge: 3600000 * 24 * 7,
           httpOnly: true,
-          sameSite: true,
         }).send({ message: 'Вы успешно авторизовались' })
           .end();
       },
