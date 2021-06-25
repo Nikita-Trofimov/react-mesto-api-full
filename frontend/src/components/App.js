@@ -29,6 +29,24 @@ function App() {
 
   const history = useHistory();
 
+  React.useEffect(() => {
+    if (loggedIn) {
+      api.getInitialCards()
+      .then((cards) => {
+        setCards(cards);
+      })
+      .catch(err => console.log('Ошибка ' + err));
+
+      api.getProfile()
+      .then((profile) => {
+        setCurrentUser(profile);
+      })
+      .catch(err => console.log('Ошибка ' + err));
+
+    }
+  }, [loggedIn])
+
+
   function handleCardLike(card) {
     const isLiked = card.likes.some(i => i._id === currentUser._id);
     
@@ -42,22 +60,6 @@ function App() {
       setCards((state) => state.filter((c) => c._id !== card._id));
     }).catch(err => console.log('Ошибка ' + err));;
   }
-
-  React.useEffect(() => {
-    api.getInitialCards()
-    .then((cards) => {
-      setCards(cards);
-    })
-    .catch(err => console.log('Ошибка ' + err));
-  }, []);
-
-  React.useEffect(() => {
-    api.getProfile()
-    .then((profile) => {
-      setCurrentUser(profile);
-    })
-    .catch(err => console.log('Ошибка ' + err));
-  }, []);
 
   function handleCardClick(card) {
     setSelectedCard(card);
@@ -111,12 +113,12 @@ function App() {
     .then((res) => {
       setloggedIn(true);
       setUserEmail(email);
-      localStorage.setItem('token', res.token);
       history.push("/");
     })
     .catch((err) =>  {
       console.log('Ошибка ' + err);
     });
+    console.log(loggedIn);
   }
 
   function handleRegister( { password, email} ) {
@@ -159,6 +161,7 @@ function App() {
   React.useEffect(() =>{
     history.push("/");
   }, [loggedIn]);
+  
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
