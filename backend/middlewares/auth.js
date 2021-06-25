@@ -7,7 +7,7 @@ const AutorizationError = require('../utils/errors/AutorizationError');
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
-  console.log(req.headers);
+  console.log(req.headers.cookie);
   if (!authorization || !authorization.startsWith('Bearer ')) {
     throw new AutorizationError('Необходима авторизация');
   }
