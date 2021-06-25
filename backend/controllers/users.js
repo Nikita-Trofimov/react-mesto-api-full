@@ -114,8 +114,12 @@ module.exports.login = (req, res, next) => {
 
 module.exports.logout = (res, next) => {
   try {
-    res.cookies.set('jwt', { maxAge: 0 });
-    res.end();
+    res.clearCookie('jwt', {
+      sameSite: 'None',
+      secure: true,
+      httpOnly: true,
+    });
+    res.send({ message: 'Вы вышли из системы' });
   } catch (err) {
     next(err);
   }

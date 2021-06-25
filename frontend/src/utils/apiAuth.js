@@ -38,7 +38,10 @@ class ApiAuth {
   }
 
   logout() {
-    return fetch(`${this._baseUrl}/logout`)
+    return fetch(`${this._baseUrl}/logout`, {
+    headers: this._headers,
+    credentials: "include",
+    })
     .then(this._checkResponse);
   }
 
