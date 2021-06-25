@@ -20,7 +20,7 @@ const options = {
   origin: [
     'http://localhost:3000',
     'https://api.nikita-mesto.nomoredomains.club',
-    'https://nikita-mesto.nomoredomains.monster/',
+    'https://nikita-mesto.nomoredomains.monster',
   ],
   methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
   preflightContinue: false,
@@ -28,8 +28,6 @@ const options = {
   allowedHeaders: ['Content-Type', 'origin', 'Authorization'],
   credentials: true,
 };
-
-console.log('Новая версия');
 
 const { PORT = 3000 } = process.env;
 const app = express();
