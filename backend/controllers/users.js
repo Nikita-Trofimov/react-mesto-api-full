@@ -114,8 +114,7 @@ module.exports.login = (req, res, next) => {
 
 module.exports.logout = (res, next) => {
   try {
-    res.cookies.set('jwt', { expires: Date.now() })
-      .send({ message: 'Вы вышли из системы' });
+    res.cookies.set('jwt', { maxAge: 0 });
   } catch (err) {
     next(err);
   }
