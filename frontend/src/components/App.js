@@ -49,8 +49,7 @@ function App() {
 
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-    
+    const isLiked = card.likes.some(i => i === currentUser._id);
     api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
       setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
     }).catch(err => console.log('Ошибка ' + err));
@@ -135,33 +134,9 @@ function App() {
     });
   }
 
-  // function tokenCheck() {
-  //   const token = localStorage.getItem('token')
-  //   if (!token) {
-  //     return;
-  //   }
-
-  //   apiAuth.checkToken(token)
-  //   .then(({ data }) => {
-  //     setloggedIn(true);
-  //     setUserEmail(data.email);
-  //   })
-  //   .catch((err) => console.log('Ошибка ' + err));
-  // }
-
   function onLogOut() {
-    // localStorage.removeItem("token");
     setloggedIn(false);
   }
-
-  // React.useEffect(() => {
-  //   tokenCheck()
-  // }, []);
-
-  // React.useEffect(() =>{
-  //   history.push("/");
-  // }, [loggedIn]);
-  
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
