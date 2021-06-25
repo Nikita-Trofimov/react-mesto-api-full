@@ -133,28 +133,28 @@ function App() {
     });
   }
 
-  function tokenCheck() {
-    const token = localStorage.getItem('token')
-    if (!token) {
-      return;
-    }
+  // function tokenCheck() {
+  //   const token = localStorage.getItem('token')
+  //   if (!token) {
+  //     return;
+  //   }
 
-    apiAuth.checkToken(token)
-    .then(({ data }) => {
-      setloggedIn(true);
-      setUserEmail(data.email);
-    })
-    .catch((err) => console.log('Ошибка ' + err));
-  }
+  //   apiAuth.checkToken(token)
+  //   .then(({ data }) => {
+  //     setloggedIn(true);
+  //     setUserEmail(data.email);
+  //   })
+  //   .catch((err) => console.log('Ошибка ' + err));
+  // }
 
   function onLogOut() {
-    localStorage.removeItem("token");
+    // localStorage.removeItem("token");
     setloggedIn(false);
   }
 
-  React.useEffect(() => {
-    tokenCheck()
-  }, []);
+  // React.useEffect(() => {
+  //   tokenCheck()
+  // }, []);
 
   React.useEffect(() =>{
     history.push("/");
