@@ -139,7 +139,6 @@ function App() {
     apiAuth.logout()
     .then(() => {
       setloggedIn(false);
-      setCurrentUser({});
       history.push("/login");
     })
     .catch((err) => {

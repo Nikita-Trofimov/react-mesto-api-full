@@ -44,7 +44,6 @@ class ApiAuth {
     })
     .then(this._checkResponse);
   }
-
 }
 
 export const apiAuth = new ApiAuth({
