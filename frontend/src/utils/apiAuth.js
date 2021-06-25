@@ -1,4 +1,4 @@
-import { serverAuth } from './constants';
+import { server } from './constants';
 
 class ApiAuth {
   constructor (options) {
@@ -28,6 +28,7 @@ class ApiAuth {
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         "password": password,
         "email": email
@@ -47,7 +48,7 @@ class ApiAuth {
 }
 
 export const apiAuth = new ApiAuth({
-  baseUrl: serverAuth,
+  baseUrl: server,
   headers: {
     'Content-Type': 'application/json'
   }
