@@ -31,6 +31,7 @@ function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
+      history.push("/");
       api.getInitialCards()
       .then((cards) => {
         setCards(cards);
@@ -43,7 +44,6 @@ function App() {
       })
       .catch(err => console.log('Ошибка ' + err));
 
-      history.push("/");
     }
   }, [loggedIn])
 
