@@ -136,7 +136,7 @@ function App() {
   }
 
   function onLogOut() {
-    apiAuth.logout
+    apiAuth.logout()
     .then(() => {
       setloggedIn(false);
       setCurrentUser({});
