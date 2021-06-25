@@ -18,7 +18,8 @@ class Api {
 
   _fetch(url) {
     return fetch(`${this._baseUrl}${url}`, {
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     })
     .then(this._checkResponse);
   }
