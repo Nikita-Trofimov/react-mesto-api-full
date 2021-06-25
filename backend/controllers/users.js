@@ -111,3 +111,16 @@ module.exports.login = (req, res, next) => {
     ))
     .catch(next);
 };
+
+module.exports.logout = (res, next) => {
+  try {
+    res.clearCookie('jwt', {
+      httpOnly: true,
+      sameSite: 'None',
+      secure: true,
+    });
+    res.send({ message: 'Вы вышли из системы' });
+  } catch (err) {
+    next(err);
+  }
+};

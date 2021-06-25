@@ -32,20 +32,21 @@ function App() {
   React.useEffect(() => {
     if (loggedIn) {
       history.push("/");
-      api.getInitialCards()
-      .then((cards) => {
-        setCards(cards);
-      })
-      .catch(err => console.log('Ошибка ' + err));
-
-      api.getProfile()
-      .then((profile) => {
-        setCurrentUser(profile);
-      })
-      .catch(err => console.log('Ошибка ' + err));
-
     }
-  }, [loggedIn])
+    api.getInitialCards()
+    .then((cards) => {
+      setCards(cards);
+      setloggedIn(true);
+    })
+    .catch(err => console.log('Ошибка ' + err));
+
+    api.getProfile()
+    .then((profile) => {
+      setCurrentUser(profile);
+    })
+    .catch(err => console.log('Ошибка ' + err));
+
+  }, [loggedIn, history])
 
 
   function handleCardLike(card) {
@@ -135,7 +136,17 @@ function App() {
   }
 
   function onLogOut() {
-    setloggedIn(false);
+    apiAuth.logout
+    .then(() => {
+      setloggedIn(false);
+      setCurrentUser({});
+      history.push("/login");
+    })
+    .catch((err) => {
+      console.log('Ошибка ' + err);
+    });
+    
+
   }
 
   return (

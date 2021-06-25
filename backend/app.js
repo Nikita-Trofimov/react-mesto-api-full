@@ -12,7 +12,7 @@ const userRoutes = require('./routes/users');
 const NotFound = require('./utils/errors/NotFound');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { login, createUser } = require('./controllers/users');
+const { login, createUser, logout } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const serverError = require('./middlewares/serverError');
 
@@ -67,6 +67,8 @@ app.post('/signup', celebrate({
     password: Joi.string().min(4).required(),
   }),
 }), createUser);
+
+app.get('/logout', logout);
 
 app.use(auth);
 

@@ -37,6 +37,11 @@ class ApiAuth {
     }).then(this._checkResponse);
   }
 
+  logout() {
+    return fetch(`${this._baseUrl}/logout`)
+    .then(this._checkResponse);
+  }
+
 }
 
 export const apiAuth = new ApiAuth({
