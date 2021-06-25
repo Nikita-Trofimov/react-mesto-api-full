@@ -1,6 +1,5 @@
 import {
   server,
-  token
 } from "./constants.js";
 
 class Api {

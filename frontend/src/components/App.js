@@ -118,7 +118,6 @@ function App() {
     .catch((err) =>  {
       console.log('Ошибка ' + err);
     });
-    console.log(loggedIn);
   }
 
   function handleRegister( { password, email} ) {
@@ -158,9 +157,9 @@ function App() {
   //   tokenCheck()
   // }, []);
 
-  React.useEffect(() =>{
-    history.push("/");
-  }, [loggedIn]);
+  // React.useEffect(() =>{
+  //   history.push("/");
+  // }, [loggedIn]);
   
 
   return (
