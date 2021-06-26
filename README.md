@@ -19,5 +19,5 @@
 * Фронтэнд адаптирован под различные устройства - поддерживается разрешение экрана от 320 до 1280 и более пикселей по ширине.
 
 [Ссылка на проект](https://nikita-mesto.nomoredomains.monster/)  
-[Ссылка на API](https://api.nikita-mesto.nomoredomains.club/) 
+[Ссылка на API](https://api.nikita-mesto.nomoredomains.club/)  
 IP - 178.154.230.173
