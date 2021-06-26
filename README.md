@@ -9,7 +9,7 @@
 * Логика - **JavaScript ES6** (объектно-ориентированный и функциональный подходы, async/await, fetch API).
 * Фронтенд - **React**, функциональные компоненты.
   * Функции Context, Ref, Redirect, Route, Switch.
-  * Хуки useState, useEffect, useContext, useRef, useCallback, useHistory.
+  * Хуки useState, useEffect, useContext, useRef, useHistory.
   * Сборка с применением Create React App.
 * Бэкенд - **Node.js/Express.js**. Реализован API по принципам REST для работы с базой данных, аутентификации/авторизации.
 * Работа с данными - **MongoDB**. Для работы с Node использован Mongoose.
